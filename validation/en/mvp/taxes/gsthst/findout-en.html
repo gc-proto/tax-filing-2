@@ -145,67 +145,303 @@
   <p class="pagetag">Answer a few questions to find out if you need to charge or collect the tax and register to get a GST/HST account number.</p>
 	 <p>Businesses with lower revenue and those that deal in certain goods and services might not need to charge the tax.</p>
 
-		<div class="wb-fieldflow" data-wb-fieldflow='{"renderas":"radio"}'>
+		<div class="wb-frmvld"> 
+	 <form method="get">
+	 
+		<!--Question 1-->
+		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
+			"renderas":"radio",
+			"noForm": true,
+			"base": { "live": true },
+			"default": { "action": "addClass", "source":"#question1,#question1button,#question2button,#question2,#question3,#question4,#result1,#result2,#result3,#result4,#result5,#result6", "class": "hidden" }
+			}'>
 			<p>Do you or your organisation already have a GST/HST account?</p>
 			<ul>
-				<li><a href="findout-registrant-en.html">yes</a></li> <!--RESULT-->
-				<li>no
-					<div class="wb-fieldflow-sub" data-wb-fieldflow='{"renderas":"checkbox", "reset": { "action": "addClass", "source":".toggle1,.toggle2", "class": "hidden" }}'>
-						<div class="wb-fieldflow-header">
-							<p class="wb-fieldflow-label">Check all of the following goods or services that you sell or provide.</p>
-							<p><small>Call 1-800-959-5525 to see if a good or service (supply) is exempt but not clear in this list.</small></p>
-                        </div>
-						<ul>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle1", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">real property</a></li>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle2", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">health care services</a></li>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle3", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">educational services</a></li>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle4", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">child and personal care services</a></li>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle5", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">legal aid services</a></li>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle6", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">supplies by charities</a></li>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle7", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">supplies by public sector bodies (other than charities)</a></li>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle8", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">financial services</a></li>
-							<li data-wb-fieldflow='{ "action": "removeClass", "source":".toggle9", "class": "hidden", "live": true }'><a href="findout-exempt-en.html">toll roads and toll bridges</a></li>
-							<li>other goods and services
-								<div class="wb-fieldflow-sub" data-wb-fieldflow='{"renderas":"radio"}'>
-									<p>Are you or your organisation one of the following?</p>
-									<ul>
-										<li><a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html#summary-details1">registered charity</a></li>
-										<li><a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html#summary-details2">public service body (school authorities, public colleges, universities, hospital authorities or municipalities)</a></li>
-										<li><a href="findout-taxi-en.html">taxi or limousine driver</a></li>
-										<li>all other businesses
-											<div class="wb-fieldflow-sub" data-wb-fieldflow='{"renderas":"radio"}'>
-												<div class="wb-fieldflow-header">
-													<p class="wb-fieldflow-label">Do you expect to pass $30,000 CND in total sales or revenue within the next 12 months?</p>
-													<p><small>Do not include revenue from non-taxable supplies:</small></p>
-													<p class="toggle1 hidden"><small>-real property</small></p>
-													<p class="toggle2 hidden"><small>-health care services</small></p>
-													<p class="toggle3 hidden"><small>-educational services</small></p>
-													<p class="toggle4 hidden"><small>-child and personal care services</small></p>
-													<p class="toggle5 hidden"><small>-legal aid services</small></p>
-													<p class="toggle6 hidden"><small>-supplies by charities</small></p>
-													<p class="toggle7 hidden"><small>-supplies by public sector bodies (other than charities)</small></p>
-													<p class="toggle8 hidden"><small>-financial services</small></p>
-													<p class="toggle9 hidden"><small>-toll roads and toll bridges</small></p>
-												</div>
-												<ul>
-													<li><a href="findout-businessover-en.html">yes</a></li> <!--RESULT-->
-													<li><a href="findout-businessunder-en.html">no</a></li> <!--RESULT-->
-													<li><a href="businesspast-en.html">I passed $30,000CND in a period of 12 months in the past</a></li> <!--RESULT-->
-												</ul>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</li>
+				<li data-wb-fieldflow='{"action": "removeClass", "source":"#question1button", "class": "hidden"}'>yes</a></li> <!--result-->
+				<li data-wb-fieldflow='{ "action": "append", "source":"#question2" }'>no</li>
 			</ul>
 		</div>
+		
+		<div id="question1button" class="hidden" >
+			<a href="findout-registrant-en.html" class="btn btn-primary">Continue</a>
+		</div>
+		
+		<!--Question 2-->
+		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"checkbox", "reset": { "action": "addClass", "source":".toggle1,.toggle2", "class": "hidden" }}'>
+			<div class="wb-fieldflow-header">
+				<p class="wb-fieldflow-label">Check all of the following goods or services that you sell or provide.</p>
+				<p><small>A list of examples will show up below for each item.</small></p>
+			</div>
+			<ul>
+				<li data-wb-fieldflow='[
+					{ "action": "removeClass", "source":".toggle1", "class": "hidden", "live": true },
+					{ "action": "removeClass", "source":"#result1", "class": "hidden", "live": true },
+					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
+				]'>real property</a></li>
+				<li data-wb-fieldflow='[
+					{ "action": "removeClass", "source":".toggle2", "class": "hidden", "live": true },
+					{ "action": "removeClass", "source":"#result2", "class": "hidden", "live": true },
+					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
+				]'>health care services</a></li>
+				<li data-wb-fieldflow='[
+					{ "action": "removeClass", "source":".toggle3", "class": "hidden", "live": true },
+					{ "action": "removeClass", "source":"#result3", "class": "hidden", "live": true },
+					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
+				]'>educational services</a></li>
+				<li data-wb-fieldflow='[
+					{ "action": "removeClass", "source":".toggle4", "class": "hidden", "live": true },
+					{ "action": "removeClass", "source":"#result4", "class": "hidden", "live": true },
+					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
+				]'>child and personal care services</a></li>
+				<li data-wb-fieldflow='[
+					{ "action": "removeClass", "source":".toggle5", "class": "hidden", "live": true },
+					{ "action": "removeClass", "source":"#result5", "class": "hidden", "live": true },
+					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
+				]'>legal aid services</a></li>
+				<li data-wb-fieldflow='[
+					{ "action": "removeClass", "source":".toggle6", "class": "hidden", "live": true },
+					{ "action": "removeClass", "source":"#result6", "class": "hidden", "live": true },
+					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
+				]'>financial services</a></li>
+				<li data-wb-fieldflow='[
+					{ "action": "addClass", "source":"#result1", "class": "hidden" },
+					{ "action": "addClass", "source":"#result2", "class": "hidden" },
+					{ "action": "addClass", "source":"#result3", "class": "hidden" },
+					{ "action": "addClass", "source":"#result4", "class": "hidden" },
+					{ "action": "addClass", "source":"#result5", "class": "hidden" },
+					{ "action": "addClass", "source":"#result6", "class": "hidden" },
+					{ "action": "append", "source":"#question3" },
+					{ "action": "addClass", "source":"#question2button", "class": "hidden" }
+				]'>other goods and services</li>
+			</ul>
+			
+		</div>
+		<div id="result1" class="hidden">
+			<section class="panel panel-default">
+			  <header class="panel-heading">
+			   <h2 class="panel-title">Types of real property</h2>
+			  </header>
+			  <div class="panel-body">
+			  <ul>
+				<li>floating home mooring facilities provided long term</li>
+				<li>lease for exempt re-supply</li>
+				<li>lease of parking space (in connection with residential property)</li>
+				<li>long term or low cost residential rent</li>
+				<li>meal plan in a residential complex</li>
+				<li>residential condominium or co-operative housing common expenses</li>
+				<li>residential condominium parking space</li>
+				<li>sale of farmland to a relative and deemed sales of farmland</li>
+				<li>sale of land under a ground lease</li>
+				<li>sale of residential building to person leasing land</li>
+				<li>sale of residential property after an exempt or deemed taxable supply</li>
+				<li>sale of vacant land and other non-residential property by an individual or a personal trust, in some cases</li>
+				<li>supply of a residential trailer park</li>
+				<li>supply of long term ground lease</li>
+				<li>supply of right to use washing machine or clothes dryer (in connection with residential property)</li>
+				<li>used or occupied residential properties</li>
+			   </ul>
+			   <p>If the good or service you provide is not in this list, but you fit in this category, call 1-800-959-5525 to check if you might still be exempt from the GST/HST.</p>
+			  </div>
+			</section> 
+		</div>
+		<div id="result2" class="hidden">
+			<section class="panel panel-default">
+			  <header class="panel-heading">
+			   <h2 class="panel-title">Types of health care services</h2>
+			  </header>
+			  <div class="panel-body">
+			  <ul>
+				  <li>acupuncture services</li>
+				  <li>ambulance services</li>
+				  <li>audiological services</li>
+				  <li>chiropodic services</li>
+				  <li>chiropractic services</li>
+				  <li>dental hygienist service</li>
+				  <li>dietetic services</li>
+				  <li>food and beverages to a health care facility</li>
+				  <li>goods or services covered by provincial health insurance</li>
+				  <li>home health care services to include funded personal care services such as bathing, feeding, assistance with dressing, taking medication, cleaning, laundering, meal preparation and child care</li>
+				  <li>institutional health care services</li>
+				  <li>laboratory, radiological or diagnostic services</li>
+				  <li>lease of medical equipment</li>
+				  <li>medical and dental services (other than for cosmetic purposes)</li>
+				  <li>midwifery services</li>
+				  <li>naturopathic services</li>
+				  <li>nursing services</li>
+				  <li>occupational therapy services</li>
+				  <li>optometric services</li>
+				  <li>osteopathic services</li>
+				  <li>pharmacist consultation and diagnostic request services made after March 29, 2012 (other than drug dispensing services)</li>
+				  <li>psychological services</li>
+				  <li>physiotherapy services</li>
+				  <li>podiatric services</li>
+				  <li>purely cosmetic procedures (exempt only if it is necessary for medical or reconstructive purposes or where the procedure is covered under a provincial or territorial health insurance plan)</li>
+				  <li>social worker services</li> 
+				  <li>speech-language pathology services</li>
+				  <li>training services or services of designing a training plan that are specially designed to assist individuals with a disorder or disability if the training is not similar to training ordinarily given to individuals who do not have any disorder or disability</li>  
+			    </ul>
+			    <p>If the good or service you provide is not in this list, but you fit in this category, call 1-800-959-5525 to check if you might still be exempt from the GST/HST.</p>
+			  </div>
+			</section> 
+		</div>
+		<div id="result3" class="hidden">
+			<section class="panel panel-default">
+			  <header class="panel-heading">
+			   <h2 class="panel-title">Types of educational services</h2>
+			  </header>
+			  <div class="panel-body">
+			  <ul>
+				  <li>degree granting instructional services and mandatory fees</li>
+				  <li>elementary and secondary schooling</li>
+				  <li>English and French second language instruction</li>
+				  <li>extra-curricular school activities (including food, beverages, services and admissions)</li>
+				  <li>food services to universities, colleges and schools</li>
+				  <li>lease of goods to students</li>
+				  <li>non-degree college and university courses</li>
+				  <li>professional accreditation instructional services</li>
+				  <li>school cafeteria meals</li>
+				  <li>student and teacher services in the course of instruction</li>
+				  <li>tutoring and music lessons</li>
+				  <li>university and college meal plans</li>
+				  <li>vocational course instructional services</li>
+			   </ul>
+			   <p>If the good or service you provide is not in this list, but you fit in this category, call 1-800-959-5525 to check if you might still be exempt from the GST/HST.</p>
+			  </div>
+			</section> 
+		</div>
+		<div id="result4" class="hidden">
+			<section class="panel panel-default">
+			  <header class="panel-heading">
+			   <h2 class="panel-title">Types of child and personal care services</h2>
+			  </header>
+			  <div class="panel-body">
+			  <ul>
+				<li>child care services less than 24 hours</li>
+				<li>disability care services</li>
+				<li>residential care services</li>
+			   </ul>
+				  <p>If the good or service you provide is not in this list, but you fit in this category, call 1-800-959-5525 to check if you might still be exempt from the GST/HST.</p>
+			  </div>
+			</section> 
+		</div>
+		<div id="result5" class="hidden">
+			<section class="panel panel-default">
+			  <header class="panel-heading">
+			   <h2 class="panel-title">Types of legal aid services</h2>
+			  </header>
+			  <div class="panel-body">
+			  <ul>
+				<li>legal aid services under a provincial legal aid plan</li>
+			   </ul>
+				  <p>If you are not providing legal aid services under a provincial legal aid plan, but you fit in this category, call 1-800-959-5525 to check if you might still be exempt from the GST/HST.</p>
+			  </div>
+			</section> 
+		</div>
+		<div id="result6" class="hidden">
+			<section class="panel panel-default">
+			  <header class="panel-heading">
+			   <h2 class="panel-title">Types of financial services</h2>
+			  </header>
+			  <div class="panel-body">
+			  <ul>
+				<li>all supplies of financial services that are not zero-rated</li>
+				<li>deemed financial services</li>
+			   </ul>
+				  <p>If the good or service you provide is not in this list, but you fit in this category, call 1-800-959-5525 to check if you might still be exempt from the GST/HST.</p>
+			  </div>
+			</section> 
+		</div>
 
+		<div id="question2button" class="hidden" >
+			<a href="findout-exempt-en.html" class="btn btn-primary">Continue</a>
+		</div>
 
+		<div id="question3" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
+			<p>Are you or your organisation one of the following?</p>
+			<ul>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#question3buttona", "class": "hidden"},
+					{ "action": "addClass", "source":"#question3buttonb", "class": "hidden" },
+					{ "action": "addClass", "source":"#question3buttonc", "class": "hidden" }
+				]'>registered charity</li>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#question3buttonb", "class": "hidden"},
+					{ "action": "addClass", "source":"#question3buttona", "class": "hidden" },
+					{ "action": "addClass", "source":"#question3buttonc", "class": "hidden" }				
+				]'>public service body (school authorities, public colleges, universities, hospital authorities or municipalities)</a></li>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#question3buttonc", "class": "hidden"},
+					{ "action": "addClass", "source":"#question3buttona", "class": "hidden" },
+					{ "action": "addClass", "source":"#question3buttonb", "class": "hidden" }						
+				]'>taxi or limousine driver</a></li>
+				<li data-wb-fieldflow='[
+					{ "action": "append", "source":"#question4" },
+					{ "action": "addClass", "source":"#question3buttona", "class": "hidden" },
+					{ "action": "addClass", "source":"#question3buttonb", "class": "hidden" },
+					{ "action": "addClass", "source":"#question3buttonc", "class": "hidden" }	
+				]'>all other businesses</li>
+			</ul>
+		</div>
+		
+		<!--buttons-->
+		<div id="question3buttona" class="hidden" >
+			<a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html#summary-details1" class="btn btn-primary">Continue</a>
+		</div>
+		<div id="question3buttonb" class="hidden" >
+			<a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/register-a-gst-hst-account.html#summary-details2" class="btn btn-primary">Continue</a>
+		</div>
+		<div id="question3buttonc" class="hidden" >
+			<a href="findout-taxi-en.html" class="btn btn-primary">Continue</a>
+		</div>
 
- </div>
+		<div id="question4" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
+			<div class="wb-fieldflow-header">
+				<p class="wb-fieldflow-label">Do you expect to pass $30,000 CAD in total sales or revenue within the next 12 months?</p>
+				<p><small>Do not include revenue from non-taxable supplies:</small></p>
+				<ul>
+				<li class="toggle1 hidden"><small>real property</small></li>
+				<li class="toggle2 hidden"><small>health care services</small></li>
+				<li class="toggle3 hidden"><small>educational services</small></li>
+				<li class="toggle4 hidden"><small>child and personal care services</small></li>
+				<li class="toggle5 hidden"><small>legal aid services</small></li>
+				<li class="toggle6 hidden"><small>financial services</small></li>
+				</ul>
+			</div>
+			<ul>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#question4buttona", "class": "hidden"},
+					{ "action": "addClass", "source":"#question4buttonb", "class": "hidden" },
+					{ "action": "addClass", "source":"#question4buttonc", "class": "hidden" }
+				]'>yes</a></li>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#question4buttonb", "class": "hidden"},
+					{ "action": "addClass", "source":"#question4buttona", "class": "hidden" },
+					{ "action": "addClass", "source":"#question4buttonc", "class": "hidden" }
+				]'>no</a></li> 
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#question4buttonc", "class": "hidden"},
+					{ "action": "addClass", "source":"#question4buttonb", "class": "hidden" },
+					{ "action": "addClass", "source":"#question4buttona", "class": "hidden" }
+				]'>I passed $30,000CAD in a period of 12 months in the past</a></li> 
+			</ul>
+		</div>
+		
+		<!--buttons-->
+		<div id="question4buttona" class="hidden" >
+			<a href="findout-businessover-en.html" class="btn btn-primary">Continue</a>
+		</div>
+		<div id="question4buttonb" class="hidden" >
+			<a href="findout-businessunder-en.html" class="btn btn-primary">Continue</a>
+		</div>
+		<div id="question4buttonc" class="hidden" >
+			<a href="businesspast-en.html" class="btn btn-primary">Continue</a>
+		</div>
+								
+  </form>
+		
+		
+
+</div>
 
 </div>
 
