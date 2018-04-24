@@ -139,6 +139,7 @@
 			"renderas":"radio",
 			"noForm": true,
 			"base": { "live": true },
+			"noreqlabel": true,
 			"default": { "action": "addClass", "source":"#question1,#question1button,#question2button,question3buttona,question3buttonb,question3buttonc,#question4buttona,#question4buttonb,#question4buttonc,#question2,#question3,#question4,#result1,#result2,#result3,#result4,#result5,#result6", "class": "hidden" }
 			}'>
 			<p>Do you or your organisation already have a GST/HST account?</p>
@@ -153,7 +154,7 @@
 		</div>
 		
 		<!--Question 2-->
-		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"checkbox", "reset": { "action": "addClass", "source":".toggle1,.toggle2", "class": "hidden" }}'>
+		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"checkbox", "reset": { "action": "addClass", "source":".toggle1,.toggle2", "class": "hidden" },"noreqlabel": true}'>
 			<div class="wb-fieldflow-header">
 				<p class="wb-fieldflow-label">Check all of the following goods or services that you sell or provide.</p>
 				<p><small>A list of examples will show up below for each item.</small></p>
@@ -342,7 +343,7 @@
 			<a href="findout-exempt-en.html" class="btn btn-primary">Continue</a>
 		</div>
 
-		<div id="question3" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
+		<div id="question3" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio", "noreqlabel": true}'>
 			<p>Are you or your organisation one of the following?</p>
 			<ul>
 				<li data-wb-fieldflow='[
@@ -380,7 +381,7 @@
 			<a href="findout-taxi-en.html" class="btn btn-primary">Continue</a>
 		</div>
 
-		<div id="question4" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
+		<div id="question4" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio", "noreqlabel": true}'>
 			<div class="wb-fieldflow-header">
 				<p class="wb-fieldflow-label">Do you expect to pass $30,000 CAD in total sales or revenue within the next 12 months?</p>
 				<p><small>Do not include revenue from non-taxable supplies:</small></p>
