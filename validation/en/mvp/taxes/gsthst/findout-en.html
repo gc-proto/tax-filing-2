@@ -157,7 +157,7 @@
 		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"checkbox", "reset": { "action": "addClass", "source":".toggle1,.toggle2", "class": "hidden" },"noreqlabel": true, "isoptional": true }'>
 			<div class="wb-fieldflow-header">
 				<p class="wb-fieldflow-label">Check all of the following goods or services that you sell or provide.</p>
-				<p><small>A list of examples will show up below for each item.</small></p>
+				<p><small>A list of examples will appear when you select a service.</small></p>
 			</div>
 			<ul>
 				<li data-wb-fieldflow='[
@@ -345,7 +345,10 @@
 		
 		 
 		<div id="question2a" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio", "noreqlabel": true}'>
-			<p>Is your organisation resident in Canada?</p>
+			<div class="wb-fieldflow-header">
+				<p class="wb-fieldflow-label">Does your business or organization reside in Canada?</p>
+				<p><small>If you are unsure, please see the definition for a <a href="#">non-resident business</a>.</small></p>
+			</div>
 			<ul>
 				<li data-wb-fieldflow='{ "action": "append", "source":"#question3" }'>yes</li> <!--result-->
 				<li data-wb-fieldflow='{ "action": "removeClass", "source":"#question2abutton", "class": "hidden"}'>no</li>
